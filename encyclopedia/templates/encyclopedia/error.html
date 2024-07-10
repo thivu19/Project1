@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Error Page
+{% endblock %}
+
+{% block body %}
+    {% if error is None %}
+        <!-- When entry can not be found -->
+        <h1>Requested page was not found.</h1>
+    {% elif error == "exist" %}
+        <!-- When entry already existed in the list -->
+        <h1>Encyclopedia entry already exists.</h1>
+    {% elif error == "error" %}
+        <!-- When an error happen -->
+        <h1>Something went wrong.</h1>
+    {% endif %}
+{% endblock %}
